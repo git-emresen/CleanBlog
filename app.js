@@ -1,8 +1,25 @@
-const express=require("express")
+const express = require("express");
+const ejs = require("ejs");
+const path = require("path");
 
-const app=express();
+const app = express();
 
-app.get('/',(req,res)=>{
-    const blog = { id: 1, title: "Blog title", description: "Blog description" }
-    res.send(blog)
-}).listen(3000)
+app.set("view engine", "ejs");
+
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/post", (req, res) => {
+  res.render("post");
+});
+app.get("/add", (req, res) => {
+  res.render("add");
+});
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server listening on port ${3000}`);
+});
