@@ -23,52 +23,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+       <% for(let i=0;i<posts.length;i++) { %>
         <div class="post-preview">
-          <a href="/post">
+          <a href="">
             <h2 class="post-title">
-              What is Lorem Ipsum?
+              <%= posts[i].title %>
             </h2>
             <h3 class="post-subtitle">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="/post">
-            <h2 class="post-title">
-              Where does it come from?
-            </h2>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 18, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="/post">
-            <h2 class="post-title">
-              Why do we use it?
-            </h2>
-            <h3 class="post-subtitle">
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on August 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="/post">
-            <h2 class="post-title">
-              Where can I get some?
-            </h2>
-            <h3 class="post-subtitle">
-              There are many variations of passages of Lorem Ipsum available
+              <%= posts[i].detail %>
             </h3>
           </a>
           <p class="post-meta">Posted by
@@ -76,6 +38,7 @@
             on July 8, 2019</p>
         </div>
         <hr>
+        <%}%>
         <!-- Pager -->
         <div class="clearfix">
           <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
@@ -83,8 +46,8 @@
       </div>
     </div>
   </div>
-
   <hr>
+  
 
   <!-- Footer -->
   <%- include('partials/_footer') -%>
