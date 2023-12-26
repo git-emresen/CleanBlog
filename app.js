@@ -21,16 +21,25 @@ app.get("/", async (req, res) => {
   })
 });
 
-app.get("/add", (req, res) => {
-  res.render("post");
+app.get("/addpost", (req, res) => {
+  res.render("addpost")
 });
 
-app.post("/post", async (req, res) => {
+app.post("/savepost", async (req, res) => {
   AddPost.create(req.body)
   res.redirect("/")
 });
+
+app.get("/posts/:id",async (req,res)=>{
+  const post=await AddPost.findById(req.params.id)
+  res.render("post",{
+    post
+  })
+  console.log(post)
+})
 
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server listening on port ${3000}`);
 });
+

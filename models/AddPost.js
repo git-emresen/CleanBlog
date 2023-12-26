@@ -1,12 +1,12 @@
 const mongoose=require("mongoose")
-const schema=require("mongoose").Schema
+const schema=mongoose.Schema
 
 const PostSchema=new schema({
     title:String,
     detail:String,
     dateCreated:{
         type:Date,
-        value:Date.now
+        default:Date.now()
     }
 })
 
