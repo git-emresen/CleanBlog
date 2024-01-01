@@ -30,6 +30,12 @@
     <div class="card-footer text-muted">
       Created at <%=post.dateCreated %>
     </div>
+    <div class="clearfix">
+      <a class="btn btn-primary" href="/editpost/<%= post._id%>">Update &rarr;</a>
+    </div>
+    <div class="clearfix">
+      <a class="btn btn-primary" href="deletepost/<%= post._id%>">Delete &rarr;</a>
+    </div>
   </div>
 
   <!-- Footer -->
